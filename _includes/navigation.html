@@ -16,4 +16,10 @@
   {% else %}
   <li><a href="/opensource/">Open Source</a></li>
   {% endif %}
+
+  {% if page.id == 'blog' %}
+  <li class="selected">Blog</li>
+  {% else %}
+  <li><a href="/blog/">Blog</a></li>
+  {% endif %}
 </ul>
