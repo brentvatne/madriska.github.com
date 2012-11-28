@@ -9,7 +9,7 @@ a {
   padding: 15px 50px;
   margin: 5px 0 25px 0;
   color: #eeeeee;
-  text-shadow: #333333 0 0 5px;
+  text-shadow: 0 0 5px #333333;
   letter-spacing: 1px;
 }
 /* line 14, ../sass/screen.sass */
@@ -32,4 +32,15 @@ a {
   margin-right: 10px;
   width: 70px;
   height: 65px;
+}
+
+/* Blog */
+/* line 35, ../sass/screen.sass */
+.blog-post {
+  list-style-type: none;
+}
+
+/* line 38, ../sass/screen.sass */
+.blog-post-title {
+  font-size: 24px;
 }
