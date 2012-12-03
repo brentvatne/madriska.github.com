@@ -63,20 +63,30 @@ a {
 }
 /* line 34, ../sass/screen.sass */
 .navigation-header .navigation-header-link-section {
+  height: 45px;
+  line-height: 45px;
   text-align: right;
-  vertical-align: middle;
 }
-/* line 38, ../sass/screen.sass */
+/* line 39, ../sass/screen.sass */
 .navigation-header .navigation-header-link-section .navigation-links {
   list-style-type: none;
   display: inline-block;
+  margin: 0;
 }
-/* line 42, ../sass/screen.sass */
+/* line 44, ../sass/screen.sass */
 .navigation-header .navigation-header-link-section .navigation-link {
+  vertical-align: middle;
+  background-color: #cccccc;
+  padding: 5px 15px 5px 15px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -ms-border-radius: 5px 5px 5px 5px;
+  -o-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
   display: inline-block;
 }
 
-/* line 46, ../sass/screen.sass */
+/* line 52, ../sass/screen.sass */
 .title-header {
   background-color: #3f5b76;
   padding: 30px 50px 15px 50px;
@@ -86,18 +96,18 @@ a {
   letter-spacing: 1px;
   text-align: center;
 }
-/* line 56, ../sass/screen.sass */
+/* line 62, ../sass/screen.sass */
 .title-header .heading {
   font-family: Junction, Arial;
   font-size: 3em;
-  line-height: 1;
+  line-height: 1.2;
 }
-/* line 61, ../sass/screen.sass */
+/* line 67, ../sass/screen.sass */
 .title-header .heading a {
   text-decoration: none;
   border: none;
 }
-/* line 65, ../sass/screen.sass */
+/* line 71, ../sass/screen.sass */
 .title-header .heading a img {
   vertical-align: -30%;
   margin-right: 10px;
@@ -111,108 +121,67 @@ a {
   src: url("/fonts/Junction.otf");
 }
 
-/* line 77, ../sass/screen.sass */
+/* line 83, ../sass/screen.sass */
 html {
   overflow-y: scroll;
   font-family: Junction, Arial;
 }
 
-/* line 81, ../sass/screen.sass */
+/* line 87, ../sass/screen.sass */
 h2 {
   text-align: center;
   color: #333333;
 }
 
-/* line 86, ../sass/screen.sass */
+/* line 92, ../sass/screen.sass */
 p {
   font-size: 1.2em;
   text-align: justify;
 }
 
-/* line 91, ../sass/screen.sass */
+/* line 97, ../sass/screen.sass */
 .phone em {
   padding-left: 5px;
   color: #777777;
 }
 
-/* line 96, ../sass/screen.sass */
+/* line 102, ../sass/screen.sass */
 ul.navigation {
   list-style-type: none;
   padding-left: 0;
   border: 1px solid #cccccc;
 }
 
-/* line 102, ../sass/screen.sass */
+/* line 108, ../sass/screen.sass */
 ul.navigation li {
   list-style-type: none;
   padding-left: 10px;
   line-height: 2;
 }
 
-/* line 108, ../sass/screen.sass */
+/* line 114, ../sass/screen.sass */
 ul.navigation li.selected {
   background-color: #cccccc;
   font-weight: bold;
 }
 
-/* line 113, ../sass/screen.sass */
+/* line 119, ../sass/screen.sass */
 ul.navigation li a {
   display: block;
 }
 
-/* line 117, ../sass/screen.sass */
-.bio {
-  margin-bottom: 10px;
-}
-
-/* line 121, ../sass/screen.sass */
-.bio.last {
-  margin-bottom: 35px;
-}
-
-/* line 125, ../sass/screen.sass */
-.bio .name {
-  display: inline-block;
-  margin-top: 8px;
-  margin-left: -190px;
-  width: 180px;
-  text-align: right;
-  float: left;
-}
-
-/* line 134, ../sass/screen.sass */
-.bio .name span {
-  font-family: Junction, Arial;
-  background: #cccccc;
-  padding: 8px 8px 6px 8px;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  margin-bottom: 10px;
-}
-
-/* line 144, ../sass/screen.sass */
-p.footer {
-  display: block;
-  float: right;
-  font-size: 100%;
-  text-align: right;
-  padding: 6px 10px;
-  background-color: #cccccc;
-}
-
 /* Blog */
-/* line 153, ../sass/screen.sass */
+/* line 123, ../sass/screen.sass */
 .blog-posts {
   display: inline-block;
 }
 
-/* line 156, ../sass/screen.sass */
+/* line 126, ../sass/screen.sass */
 .blog-post {
   list-style-type: none;
 }
 
-/* line 159, ../sass/screen.sass */
+/* line 129, ../sass/screen.sass */
 .blog-post-title {
   font-size: 24px;
 }
