@@ -25,11 +25,21 @@ GEM
     liquid (2.4.1)
     maruku (0.6.1)
       syntax (>= 1.0.0)
+    modular-scale (1.0.2)
+      compass (>= 0.11.5)
+      sassy-math (>= 1.2)
     posix-spawn (0.3.6)
     rake (10.0.2)
     rdiscount (1.6.8)
     sass (3.2.3)
+    sassy-math (1.2)
+      compass (~> 0.11)
     syntax (1.0.0)
+    zurb-foundation (3.2.2)
+      compass (>= 0.12.2)
+      modular-scale (>= 1.0.2)
+      rake
+      sass (>= 3.2.0)
 
 PLATFORMS
   ruby
@@ -40,3 +50,4 @@ DEPENDENCIES
   jekyll
   rake
   rdiscount
+  zurb-foundation

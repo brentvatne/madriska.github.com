@@ -8,14 +8,11 @@
           content="application/xhtml+xml; charset=UTF-8" />
     <title>{{ page.title }}</title>
 
-    <link rel="stylesheet" type="text/css" href="/css/blueprint/screen.css"
-          media="screen, projection" />
-    <link rel="stylesheet" type="text/css" href="/css/blueprint/print.css"
-          media="print" />
     <!--[if lt IE 8]>
     <link rel="stylesheet" type="text/css" href="css/blueprint/ie.css"
           media="screen, projection" />
     <![endif]-->
+    <link href="/css/app.css" media="screen, projector, print" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="/css/screen.css" />
     <script type="text/javascript"
@@ -25,43 +22,74 @@
     </script>
   </head>
   <body>
-    <div class="header">
-      <span class="heading">
-        <a href="/">
-          <img src="/images/logo.png" alt="" />
-        </a>
-        {{ page.heading }}
-      </span>
+    <div id="root">
+      <div class="navigation-header">
+        <div class="row display navigation-header-logo-section">
+          <div class="six columns">
+            <div class="navigation-header-logo">
+              <h1 class="navigation-header-logo-text">
+                Madriska Media Group, Inc.
+              </h1>
+            </div>
+          </div>
+
+          <div class="six columns navigation-header-link-section">
+            <ul class="navigation-links">
+              <li class="navigation-link">
+                Home
+              </li>
+              <li class="navigation-link">
+                Philosophy
+              </li>
+              <li class="navigation-link">
+                Open Source
+              </li>
+              <li class="navigation-link">
+                Blog
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="title-header">
+        <div class="row display">
+          <div class="twelve columns">
+            <span class="heading">
+              {{ page.heading }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row display">
+        <div class="eight columns">
+          {{ content }}
+        </div>
+
+        <div class="four columns">
+          <h3>Contact</h3>
+          <p class="address"><strong>Madriska Media Group, Inc.</strong><br />
+          PO Box 47889<br />
+          Chicago IL 60647</p>
+          <p class="phone">(877) 678-3589 <em>toll-free</em><br />
+          (815) 301-3105 <em>fax</em></p>
+        </div>
+      </div>
+      <div id="root_footer"></div>
     </div>
 
-    <div class="container">
-      <div class="span-14">
-        {{ content }}
-      </div>
-      <div class="span-4 last sidebar">
-        {% include navigation.html %}
-      </div>
-    </div>
-
-    <p class="footer">
+    <div id="footer">
       <strong>Madriska Media Group, Inc.</strong> /
       PO Box 47889 /
       Chicago IL 60647<br />
       <a href="#" rel="moc/aksirdam//ofni" class="email">Info</a> /
       (877) 678-3589
-    </p>
+    </div>
 
-    <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-    try {
-    var pageTracker = _gat._getTracker("UA-15112685-1");
-    pageTracker._trackPageview();
-    } catch(err) {}</script>
   </body>
 
+ {% include tracking.html %}
   <script type="text/javascript">
     $('a.email').nospam({ replaceText: true });
   </script>
