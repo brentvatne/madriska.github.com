@@ -1,9 +1,12 @@
 ---
 layout: default
 id: home
+sidebar: contact
 title: Madriska Media Group, Inc.
 heading: We're great at what we do so that you can be great at what you do.
 ---
+
+h3. Madriska
 
 While other software development companies may focus on providing every sort of service under the sun, what sets us apart is the idea that less can be more.
 

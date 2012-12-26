@@ -4,95 +4,64 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
   <head>
-    <meta http-equiv="content-type"
-          content="application/xhtml+xml; charset=UTF-8" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <title>{{ page.title }}</title>
 
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" type="text/css" href="css/blueprint/ie.css"
-          media="screen, projection" />
-    <![endif]-->
     <link href="/css/app.css" media="screen, projector, print" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
-    <script type="text/javascript"
-      src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
-    </script>
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+    <link href="/css/pygments.css" rel="stylesheet" type="text/css" />
+    <link href="/css/monokai.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="/javascripts/jquery.nospam.js">
     </script>
   </head>
   <body>
     <div id="root">
-      <div class="navigation-header">
-        <div class="row display navigation-header-logo-section">
-          <div class="six columns">
-            <div class="navigation-header-logo">
-              <h1 class="navigation-header-logo-text">
-                Madriska Media Group, Inc.
-              </h1>
+      {% if page.type == 'blog' %}
+        {% include blog_navigation.html %}
+      {% else %}
+        {% include navigation.html %}
+      {% endif %}
+
+      {% if page.heading %}
+        <div class="title-header">
+          <div class="row display">
+            <div class="twelve columns">
+              <span class="heading">
+                {{ page.heading }}
+              </span>
             </div>
           </div>
-
-          <div class="six columns navigation-header-link-section">
-            <ul class="navigation-links">
-              <li class="navigation-link">
-                <a href="/">Home</a>
-              </li>
-              <li class="navigation-link">
-                <a href="/philosophy">Philosophy</a>
-              </li>
-              <li class="navigation-link">
-                <a href="/opensource">Open Source</a>
-              </li>
-              <li class="navigation-link">
-                <a href="/blog">Blog</a>
-              </li>
-            </ul>
-          </div>
         </div>
-      </div>
-
-      <div class="title-header">
-        <div class="row display">
-          <div class="twelve columns">
-            <span class="heading">
-              {{ page.heading }}
-            </span>
-          </div>
-        </div>
-      </div>
+      {% endif %}
 
       <div class="row display">
-        <div class="eight columns">
+        <div class="eight columns ">
+          {% if page.type == 'blog' %}<div class='blog-content'>{% endif %}
           {{ content }}
+          {% if page.type == 'blog' %}</div>{% endif %}
         </div>
 
-        <div class="four columns">
-          <h3>Contact</h3>
-          <p class="address"><strong>Madriska Media Group, Inc.</strong><br />
-          PO Box 47889<br />
-          Chicago IL 60647</p>
-          <p class="phone">(877) 678-3589 <em>toll-free</em><br />
-          (815) 301-3105 <em>fax</em></p>
-        </div>
+        {% if page.sidebar == 'contact' %}
+          <div class="four columns">
+            <h3>Contact</h3>
+            <p class="address"><strong>Madriska Media Group, Inc.</strong><br />
+            PO Box 47889<br />
+            Chicago IL 60647</p>
+            <p class="phone">(877) 678-3589 <em>toll-free</em><br />
+            (815) 301-3105 <em>fax</em></p>
+          </div>
+        {% endif %}
       </div>
       <div id="root_footer"></div>
     </div>
 
-    <div id="footer">
-      <strong>Madriska Media Group, Inc.</strong> /
-      PO Box 47889 /
-      Chicago IL 60647<br />
-      <a href="#" rel="moc/aksirdam//ofni" class="email">Info</a> /
-      (877) 678-3589
-    </div>
-
+    <div id="footer"></div>
   </body>
 
- {% include tracking.html %}
+  {% include tracking.html %}
   <script type="text/javascript">
     $('a.email').nospam({ replaceText: true });
   </script>
 </html>
-
 

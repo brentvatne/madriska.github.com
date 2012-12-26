@@ -1,0 +1,51 @@
+---
+layout: default
+type: blog
+title: Learning D3
+author: Brent Vatne
+teaser: D3 (Data Driven Documents) is a powerful library for creating dynamic data visualizations in the browser. I love it. Seriously.
+tags:
+- d3
+- javascript
+- oop
+- compatibility
+---
+
+# Learning D3
+
+## What is D3
+Google Chart Tools and Highcharts are great for quickly throwing together Excel-style graphs with a bit of interactivity, but you hit a wall quickly when you want to be creative. Raphael is a fantastic library for cross-browser vector drawing, but it is a drawing tool and you will inevitably end up reinventing the wheel to draw axises, create scales, etc. D3, which is short for Data Driven Documents, fills the gulf between these two extremes - it gives you the same raw drawing power of Raphael by leveraging the SVG (Scalable Vector Graphics) API included in all modern browsers, and provides many useful tools used for visualizing data. It's also worth noting that while you will typically use SVG with D3, all D3 operations are essentially just DOM manipulations, so there is no reason why you could not use non-SVG HTML elements, and in fact this may be a good idea to ensure compatibility with older browsers.
+
+I'll spare you another Introduction to D3 style tutorial. For this, I'd recommend spending a couple of hours reading through the concise 'Getting Started with D3' by Mike Dewar, and then browsing the excellent D3 Wiki and Examples to learn more.
+
+The following are a few things I learned while putting together my first couple of visualizations.
+
+## Tooltips
+Tried d3-bootstrap, couldn't get it to work, then tried a fork of tipsy discussed on the D3 google group. Worked great.
+
+## OOD3
+Complex visualizations often involve a hundred or more lines of JavaScript, and many times this will never been touched again. But if I am working on a shared codebase that is constantly evolving, things always need to chnge. Maybe by organizing so how can I organize this if I want my code to be as clean and readable as my visualization?
+
+D3 is built around a common JavaScript pattern called function chaining.
+
+{% highlight javascript %}
+  svg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis)
+  .append("text")
+    .attr("class", "label")
+    .attr("x", width)
+    .attr("y", -6)
+    .style("text-anchor", "end")
+    .text("Time between Eruptions (min.)");
+{% endhighlight %}
+
+This is a convenient way to apply a series of functions without having to repeat the receiver each time. You will see this _everywhere_ in the source code of a D3 visualization. Usually one massive chain after another, until everything is in place and the graph is rendered. Then there might be another separate function like, `update`, or `mouseover`, to handle dynamic behaviour.
+
+
+My first attempt to.. (talk about moving it all into a class)
+
+## Compatability
+- Divs
+- Great! Except.. Use aight

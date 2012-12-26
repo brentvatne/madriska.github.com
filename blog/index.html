@@ -1,8 +1,8 @@
 ---
 layout: default
 id: blog
-title: Blog
-heading: Madriska Blog
+type: blog
+title: Madriska Blog
 ---
 
 <ul class="blog-posts">
@@ -17,12 +17,12 @@ heading: Madriska Blog
     <p class="blog-post-teaser">
       {{ post.teaser }}
     </p>
-    <ul class="tag_list_in_post">
+    <ul class="tag-list-in-post">
       {% for tag in post.tags %}
-        <li class="inline tag_list_item">
-          <a class="tag_list_link" href="/tag/{{ tag }}">
+        <li class="tag-list-item">
+          <!-- <a class="tag_list_link" href="/tag/{{ tag }}"> -->
             {{ tag }}
-          </a>
+          <!-- </a> -->
         </li>
       {% endfor %}
     </ul>

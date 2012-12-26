@@ -9,18 +9,18 @@ html, body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin-bottom: -54px;
+  margin-bottom: -100px;
 }
 /* line 18, ../../../.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 #root #root_footer {
-  height: 54px;
+  height: 100px;
 }
 
 /* line 20, ../../../.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/layout/_sticky-footer.scss */
 #footer {
   clear: both;
   position: relative;
-  height: 54px;
+  height: 100px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -35,58 +35,90 @@ html, body {
   }
 }
 /* line 12, ../sass/screen.sass */
+#footer {
+  padding: 20px 0px 10px 0px;
+  line-height: 20px;
+  text-align: center;
+}
+
+/* line 17, ../sass/screen.sass */
 a {
   color: #3f5b76;
 }
 
-/* line 15, ../sass/screen.sass */
+/* line 20, ../sass/screen.sass */
 .navigation-header {
-  padding: 10px 0px 5px 0px;
+  padding: 15px 0px 5px 0px;
   vertical-align: middle;
 }
-/* line 19, ../sass/screen.sass */
+/* line 26, ../sass/screen.sass */
 .navigation-header .navigation-header-logo {
   height: 45px;
 }
-/* line 22, ../sass/screen.sass */
+/* line 29, ../sass/screen.sass */
 .navigation-header .navigation-header-logo .navigation-header-logo-text {
   background: url("/images/logo_small.png") top left no-repeat;
   padding-left: 45px;
   display: inline-block;
   font-size: 22px;
   font-family: Junction, Arial;
-  font-weight: normal;
+  letter-spacing: -1px;
   vertical-align: middle;
   height: 35px;
   line-height: 45px;
   margin: 0;
+  font-weight: normal;
 }
-/* line 34, ../sass/screen.sass */
+/* line 42, ../sass/screen.sass */
 .navigation-header .navigation-header-link-section {
   height: 45px;
   line-height: 45px;
   text-align: right;
 }
-/* line 39, ../sass/screen.sass */
+/* line 47, ../sass/screen.sass */
 .navigation-header .navigation-header-link-section .navigation-links {
   list-style-type: none;
   display: inline-block;
   margin: 0;
+  font-family: Junction, Arial;
+  letter-spacing: -1px;
 }
-/* line 44, ../sass/screen.sass */
+/* line 54, ../sass/screen.sass */
 .navigation-header .navigation-header-link-section .navigation-link {
   vertical-align: middle;
-  background-color: #cccccc;
-  padding: 5px 15px 5px 15px;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  -moz-border-radius: 5px 5px 5px 5px;
-  -ms-border-radius: 5px 5px 5px 5px;
-  -o-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
+  padding: 0px 12px 5px 12px;
   display: inline-block;
+  font-size: 15px;
 }
 
-/* line 52, ../sass/screen.sass */
+/* line 61, ../sass/screen.sass */
+.navigation-header-blog .navigation-header-blog-logo {
+  height: 60px;
+}
+/* line 64, ../sass/screen.sass */
+.navigation-header-blog .navigation-header-blog-logo-text {
+  background: url("/images/logo_small.png") top left no-repeat;
+  padding-left: 45px;
+  display: inline-block;
+  font-size: 22px;
+  letter-spacing: -1px;
+  font-family: Junction, Arial;
+  vertical-align: middle;
+  height: 35px;
+  line-height: 45px;
+  margin: 0;
+  font-weight: normal;
+}
+/* line 77, ../sass/screen.sass */
+.navigation-header-blog .navigation-header-blog-logo-subtext {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 14px;
+  margin: 0;
+  padding-left: 45px;
+  text-align: left;
+}
+
+/* line 88, ../sass/screen.sass */
 .title-header {
   background-color: #3f5b76;
   padding: 30px 50px 15px 50px;
@@ -96,18 +128,18 @@ a {
   letter-spacing: 1px;
   text-align: center;
 }
-/* line 62, ../sass/screen.sass */
+/* line 98, ../sass/screen.sass */
 .title-header .heading {
   font-family: Junction, Arial;
   font-size: 3em;
   line-height: 1.2;
 }
-/* line 67, ../sass/screen.sass */
+/* line 103, ../sass/screen.sass */
 .title-header .heading a {
   text-decoration: none;
   border: none;
 }
-/* line 71, ../sass/screen.sass */
+/* line 107, ../sass/screen.sass */
 .title-header .heading a img {
   vertical-align: -30%;
   margin-right: 10px;
@@ -121,67 +153,110 @@ a {
   src: url("/fonts/Junction.otf");
 }
 
-/* line 83, ../sass/screen.sass */
+/* line 119, ../sass/screen.sass */
 html {
   overflow-y: scroll;
   font-family: Junction, Arial;
 }
 
-/* line 87, ../sass/screen.sass */
+/* line 123, ../sass/screen.sass */
 h2 {
   text-align: center;
   color: #333333;
 }
 
-/* line 92, ../sass/screen.sass */
+/* line 128, ../sass/screen.sass */
 p {
   font-size: 1.2em;
   text-align: justify;
 }
 
-/* line 97, ../sass/screen.sass */
+/* line 133, ../sass/screen.sass */
 .phone em {
   padding-left: 5px;
   color: #777777;
 }
 
-/* line 102, ../sass/screen.sass */
+/* line 138, ../sass/screen.sass */
 ul.navigation {
   list-style-type: none;
   padding-left: 0;
   border: 1px solid #cccccc;
 }
 
-/* line 108, ../sass/screen.sass */
+/* line 144, ../sass/screen.sass */
 ul.navigation li {
   list-style-type: none;
   padding-left: 10px;
   line-height: 2;
 }
 
-/* line 114, ../sass/screen.sass */
+/* line 150, ../sass/screen.sass */
 ul.navigation li.selected {
   background-color: #cccccc;
   font-weight: bold;
 }
 
-/* line 119, ../sass/screen.sass */
+/* line 155, ../sass/screen.sass */
 ul.navigation li a {
   display: block;
 }
 
 /* Blog */
-/* line 123, ../sass/screen.sass */
+/* line 159, ../sass/screen.sass */
 .blog-posts {
   display: inline-block;
+  padding: 20px 0px 0px 40px;
 }
 
-/* line 126, ../sass/screen.sass */
+/* line 163, ../sass/screen.sass */
 .blog-post {
   list-style-type: none;
+  font-family: Georgia, serif;
 }
 
-/* line 129, ../sass/screen.sass */
+/* line 167, ../sass/screen.sass */
 .blog-post-title {
   font-size: 24px;
+  font-family: Junction, Arial;
+  letter-spacing: -1px;
+}
+
+/* line 172, ../sass/screen.sass */
+.tag-list-in-post {
+  list-style-type: none;
+  margin: 0;
+}
+
+/* line 176, ../sass/screen.sass */
+.blog-content {
+  font-family: Georgia, serif;
+}
+/* line 179, ../sass/screen.sass */
+.blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4, .blog-content h5, .blog-content h6 {
+  font-family: Junction, Arial;
+}
+/* line 182, ../sass/screen.sass */
+.blog-content h2 {
+  font-size: 24px;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+/* line 188, ../sass/screen.sass */
+.tag-list-item {
+  display: inline-block;
+  padding: 2px 20px;
+  background-color: #e6e6e6;
+  color: #666666;
+}
+
+/* line 195, ../sass/screen.sass */
+.highlight {
+  background: #2a2a2a;
+  padding: 10px 0px 10px 0px;
+  border: 2px solid #888888;
+  border-radius: 5px;
+  margin-bottom: 17px;
 }

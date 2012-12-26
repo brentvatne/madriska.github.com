@@ -87,7 +87,7 @@ p a, p a:visited {
 
 /* line 25, ../../../.rvm/gems/ruby-1.9.3-p327/gems/zurb-foundation-3.2.2/scss/foundation/common/_globals.scss */
 .highlight {
-  background: #ffff99;
+  background: none;
 }
 
 /* line 27, ../../../.rvm/gems/ruby-1.9.3-p327/gems/zurb-foundation-3.2.2/scss/foundation/common/_globals.scss */
@@ -233,7 +233,7 @@ small {
 /* line 41, ../../../.rvm/gems/ruby-1.9.3-p327/gems/zurb-foundation-3.2.2/scss/foundation/common/_typography.scss */
 code {
   font-weight: bold;
-  background: #ffff99;
+  background: none;
 }
 
 /* Lists ---------------------- */

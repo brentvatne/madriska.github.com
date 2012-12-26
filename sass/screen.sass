@@ -1,6 +1,6 @@
 @import compass/css3
 @import compass/layout/sticky-footer
-@include sticky-footer(54px)
+@include sticky-footer(100px)
 
 @media only screen and (max-width: 800px)
   .navigation-header-logo
@@ -9,12 +9,19 @@
   .navigation-header-link-section
     text-align: center !important
 
+#footer
+  padding: 20px 0px 10px 0px
+  line-height: 20px
+  text-align: center
+
 a
   color: #3F5B76
 
 .navigation-header
-  padding: 10px 0px 5px 0px
+  padding: 15px 0px 5px 0px
   vertical-align: middle
+  // background: #F0F1F4
+  // border-bottom: 1px solid #D8DDE1
 
   .navigation-header-logo
     height: 45px
@@ -25,11 +32,12 @@ a
       display: inline-block
       font-size: 22px
       font-family: Junction, Arial
-      font-weight: normal
+      letter-spacing: -1px
       vertical-align: middle
       height: 35px
       line-height: 45px
       margin: 0
+      font-weight: normal
 
   .navigation-header-link-section
     height: 45px
@@ -40,13 +48,41 @@ a
       list-style-type: none
       display: inline-block
       margin: 0
+      font-family: Junction, Arial
+      letter-spacing: -1px
 
     .navigation-link
       vertical-align: middle
-      background-color: #ccc
-      padding: 5px 15px 5px 15px
-      @include border-radius(5px 5px 5px 5px)
+      padding: 0px 12px 5px 12px
       display: inline-block
+      font-size: 15px
+
+.navigation-header-blog
+  .navigation-header-blog-logo
+    height: 60px
+
+  .navigation-header-blog-logo-text
+    background: url('/images/logo_small.png') top left no-repeat
+    padding-left: 45px
+    display: inline-block
+    font-size: 22px
+    letter-spacing: -1px
+    font-family: Junction, Arial
+    vertical-align: middle
+    height: 35px
+    line-height: 45px
+    margin: 0
+    font-weight: normal
+
+  .navigation-header-blog-logo-subtext
+    font-family: 'Shadows Into Light', cursive
+    font-size: 14px
+    margin: 0
+    padding-left: 45px
+    text-align: left
+
+  // .navigation-header-link-section
+  //   background: black
 
 
 .title-header
@@ -122,9 +158,43 @@ ul.navigation li a
 /* Blog */
 .blog-posts
   display: inline-block
+  padding: 20px 0px 0px 40px
 
 .blog-post
   list-style-type: none
+  font-family: Georgia, serif
 
 .blog-post-title
   font-size: 24px
+  font-family: Junction, Arial
+  letter-spacing: -1px
+
+.tag-list-in-post
+  list-style-type: none
+  margin: 0
+
+.blog-content
+  font-family: Georgia, serif
+
+  h1, h2, h3, h4, h5, h6
+    font-family: Junction, Arial
+
+  h2
+    font-size: 24px
+    text-align: left
+    margin-top: 20px
+    margin-bottom: 5px
+
+.tag-list-item
+  $tagColor: lighten(#000, 90%)
+  display: inline-block
+  padding: 2px 20px
+  background-color: $tagColor
+  color: darken($tagColor, 50%)
+
+.highlight
+  background: #2a2a2a
+  padding: 10px 0px 10px 0px
+  border: 2px solid #888
+  border-radius: 5px
+  margin-bottom: 17px
