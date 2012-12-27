@@ -1,5 +1,6 @@
 @import compass/css3
 @import compass/layout/sticky-footer
+@import tags
 @include sticky-footer(100px)
 
 @media only screen and (max-width: 800px)
@@ -8,6 +9,10 @@
 
   .navigation-header-link-section
     text-align: center !important
+
+body.blog
+  background: lighten(#F6F5ED, 2%)
+  // background: #F6F5ED
 
 body, h1, h2, h3, h4, h5, h6, p
   color: #2a2a2a
@@ -61,6 +66,8 @@ a
       font-size: 15px
 
 .navigation-header-blog
+  position: relative
+
   .navigation-header-blog-logo
     height: 60px
 
@@ -160,17 +167,26 @@ ul.navigation li a
 
 /* Blog */
 .blog-posts
-  display: inline-block
+  display: block
   padding: 20px 0px 0px 0px
 
 .blog-post
   list-style-type: none
   font-family: Georgia, serif
+  padding-bottom: 20px
 
 .blog-post-title
   font-size: 24px
   font-family: Junction, Arial
   letter-spacing: -1px
+  font-weight: bold
+  a
+    color: #F0DAC0 !important
+    text-shadow: 1px 1px 1px #B5752E
+    &:hover
+      // text-shadow: none
+      color: lighten(#F0DAC0, 5%) !important
+      text-shadow: 1px 1px 1px lighten(#B5752E, 25%)
 
 .tag-list-in-post
   list-style-type: none
@@ -194,9 +210,9 @@ ul.navigation li a
   h1
     margin-top: 0
     font-size: 35px
-    background: url(/images/blog_header_background.png)
-    height: 147px
-    padding-top: 50px
+    // background: url(/images/blog_header_background.png)
+    // height: 147px
+    padding-top: 20px
 
   h2
     color: lighten(#2a2a2a, 10%)
@@ -236,3 +252,15 @@ code
   border-radius: 3px
   font-size: 0.9em
   line-height: 20px
+
+.learn-more-badge
+  padding: 8px 15px !important
+  background: #ccc
+  border-radius: 0px 0px 5px 5px
+  position: absolute
+  top: -15px
+  right: 10px
+  a
+    color: #2a2a2a
+    &:hover
+      color: lighten(#2a2a2a, 30%)

@@ -13,7 +13,7 @@ tags:
 
 # Learning D3
 
-## What D3 is and why you should learn it
+## What D3 is and why it's worth learning
 Google Chart Tools and Highcharts are great for quickly throwing together Excel-style graphs with a bit of interactivity, but you hit a wall quickly when you want to be creative. Raphael is a fantastic library for cross-browser vector drawing, but it is a drawing tool and you will inevitably end up reinventing the wheel to draw axises, create scales, etc. D3, which is short for Data Driven Documents, fills the gulf between these two extremes - it gives you the same raw drawing power of Raphael by leveraging the SVG (Scalable Vector Graphics) API included in all modern browsers, and provides many useful tools used for visualizing data. It's also worth noting that while you will typically use SVG with D3, all D3 operations are essentially just DOM manipulations, so there is no reason why you could not use non-SVG HTML elements, and in fact this may be a good idea to ensure compatibility with older browsers.
 
 I'll spare you another Introduction to D3 style tutorial. For this, I'd recommend reading through the concise, 90 page 'Getting Started with D3' by Mike Dewar, and then browsing the excellent D3 Wiki and Examples to learn more.
@@ -51,4 +51,5 @@ My first attempt to.. (talk about moving it all into a class)
 
 ## Compatability
 - Divs
+- Axises are SVG only.. unless...
 - Great! Except.. Use aight

@@ -17,12 +17,12 @@ title: Madriska Blog
     <p class="blog-post-teaser">
       {{ post.teaser }}
     </p>
-    <ul class="tag-list-in-post">
+    <ul class="tags">
       {% for tag in post.tags %}
-        <li class="tag-list-item">
-          <!-- <a class="tag_list_link" href="/tag/{{ tag }}"> -->
+        <li class="tag">
+          <a href='#'>
             {{ tag }}
-          <!-- </a> -->
+          </a>
         </li>
       {% endfor %}
     </ul>
