@@ -276,16 +276,15 @@ ul.navigation li a {
 
 /* line 215, ../sass/screen.sass */
 .highlight {
-  background: #2a2a2a;
+  background: #fef9ed;
   padding: 10px 0px 10px 0px;
-  border: 2px solid #888888;
-  border-radius: 5px;
+  border: 1px solid #e7e7e7;
+  border-radius: 2px;
   margin-bottom: 17px;
 }
 
 /* line 223, ../sass/screen.sass */
 pre code {
-  font-weight: normal !important;
   background: none;
   padding: 0;
   border: none;
@@ -293,7 +292,7 @@ pre code {
   line-height: 18px;
 }
 
-/* line 231, ../sass/screen.sass */
+/* line 230, ../sass/screen.sass */
 code {
   font-weight: normal;
   background: #f7f7f7;
