@@ -3,16 +3,30 @@
 @import tags
 @include sticky-footer(100px)
 
-@media only screen and (max-width: 800px)
+@media only screen and (max-width: 700px)
   .navigation-header-logo
     text-align: center
+
+  .navigation-header-logo-section
+    height: 60px
 
   .navigation-header-link-section
     text-align: center !important
 
+  .blog-content
+    padding-left: 0 !important
+
+  .learn-more-badge
+    display: block
+    position: relative !important
+    background: none !important
+    text-align: left
+    top: 0 !important
+    left: 0 !important
+    display: none !important
+
 body.blog
   background: lighten(#F6F5ED, 2%)
-  // background: #F6F5ED
 
 body, h1, h2, h3, h4, h5, h6, p
   color: #2a2a2a
@@ -28,8 +42,6 @@ a
 .navigation-header
   padding: 15px 0px 5px 0px
   vertical-align: middle
-  // background: #F0F1F4
-  // border-bottom: 1px solid #D8DDE1
 
   .navigation-header-logo
     height: 45px
@@ -173,15 +185,17 @@ ul.navigation li a
 .blog-post
   list-style-type: none
   font-family: Georgia, serif
-  padding-bottom: 20px
+  padding-bottom: 40px
 
 .blog-post-title
   font-size: 24px
   font-family: Junction, Arial
   letter-spacing: -1px
   font-weight: bold
+  line-height: 26px
+
   a
-    color: #F0DAC0 !important
+    color: #E8C79F !important
     text-shadow: 1px 1px 1px #B5752E
     &:hover
       // text-shadow: none
@@ -193,15 +207,26 @@ ul.navigation li a
   margin: 0
 
 .blog-post-teaser
+  margin-top: 8px
   margin-bottom: 10px
+  a
+    border-bottom: 1px dotted
 
 .blog-content>h1:first-of-type
   margin-bottom: -10px
   text-shadow: 2px 2px 1px #b5752e
-  color: #f0dac0
+  color: #E8C79F !important
+  // color: #f0dac0
 
 .blog-content>h2:first-of-type
-  // border-top: 2px solid lighten(#2a2a2a, 30%)
+  border-top: 2px solid #E8C79F
+  padding-top: 25px
+  margin-top: -9px
+
+.blog-post-meta
+  margin-top: 0px
+  font-size: 12px
+  font-family: Junction, Arial
 
 .blog-content
   font-family: Georgia, serif
@@ -232,6 +257,8 @@ ul.navigation li a
   color: darken($tagColor, 50%)
 
 .highlight
+  // Can be problematic on mobile devices if we don't allow scroll
+  overflow-x: scroll
   background: lighten(#fdf6e4, 2%)
   padding: 10px 0px 10px 0px
   border: 1px solid #e7e7e7
