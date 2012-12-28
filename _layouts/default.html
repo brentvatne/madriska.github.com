@@ -16,7 +16,7 @@
   </head>
   <body class="{{ page.type }}">
     <div id="root">
-      {% if page.type == 'blog' %}
+      {% if page.type ~= /blog/ %}
         {% include blog_navigation.html %}
       {% else %}
         {% include navigation.html %}
@@ -37,8 +37,9 @@
       <div class="row display">
         <div class="nine columns ">
           {% if page.type == 'blog' %}<div class='blog-content'>{% endif %}
-          {{ content }}
-          {% if page.type == 'blog' %}</div>{% endif %}
+          {% if page.type == 'blog post' %}<div class='blog-content blog-post-wrapper'>{% endif %}
+            {{ content }}
+          {% if page.type ~= /blog/ %}</div>{% endif %}
         </div>
 
         {% if page.sidebar == 'contact' %}
@@ -55,7 +56,29 @@
       <div id="root_footer"></div>
     </div>
 
-    <div id="footer"></div>
+    {% if page.type ~= /blog/ %}
+      <div id='footer' class='blog-footer'>
+        <div class="row display">
+          <div class="twelve columns blog-footer-row">
+            <ul class='blog-footer-links'>
+              <li class='blog-footer-link home-link'>
+                <a href="http://www.madriska.com">
+                  madriska.com
+                </a>
+              </li>
+
+              <li class='blog-footer-link github-link'>
+                <a href="http://github.com/madriska" target="_blank">
+                  github.com/madriska
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <div id='footer' class='home-footer'>hello</div>
+    {% endif %}
   </body>
 
   {% include tracking.html %}
