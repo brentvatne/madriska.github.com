@@ -35,11 +35,25 @@
       {% endif %}
 
       <div class="row display">
-        <div class="nine columns ">
-          {% if page.type == 'blog' %}<div class='blog-content'>{% endif %}
-          {% if page.type == 'blog post' %}<div class='blog-content blog-post-wrapper'>{% endif %}
+          {% if page.type == 'blog' %}
+            <div class="nine columns">
+              <div class='blog-content'>
+          {% elsif page.type == 'blog post' %}
+            <div class="nine columns">
+              <div class='blog-content blog-post-wrapper'>
+          {% endif %}
             {{ content }}
-          {% if page.type ~= /blog/ %}</div>{% endif %}
+          {% if page.type ~= /blog/ %}
+            <p class='blog-madriska-summary'><strong>Madriska Media
+            Group</strong> is a small software-development shop that works primarily in
+            Ruby, Rails, and sometimes Clojure. Our focus is in software that supports
+            business processes, and we handle all manner of software in many vertical
+            markets. <a href="http://www.madriska.com">Learn more about us.</a>
+            </p>
+            </div>
+          <!--{% elsif page.type == 'blog' %}-->
+          <!--  </div>-->
+          <!--{% endif %}-->
         </div>
 
         {% if page.sidebar == 'contact' %}
@@ -59,20 +73,14 @@
     {% if page.type ~= /blog/ %}
       <div id='footer' class='blog-footer'>
         <div class="row display">
-          <div class="twelve columns blog-footer-row">
-            <ul class='blog-footer-links'>
-              <li class='blog-footer-link home-link'>
-                <a href="http://www.madriska.com">
-                  madriska.com
-                </a>
-              </li>
+          <div class="twelve columns blog-footer-links">
+            <a class='blog-footer-link home-link' href='http://www.madriska.com'>
+              madriska.com
+            </a>
 
-              <li class='blog-footer-link github-link'>
-                <a href="http://github.com/madriska" target="_blank">
-                  github.com/madriska
-                </a>
-              </li>
-            </ul>
+            <a class='blog-footer-link github-link' href="http://github.com/madriska" target="_blank">
+              github.com/madriska
+            </a>
           </div>
         </div>
       </div>
