@@ -4,67 +4,94 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
   <head>
-    <meta http-equiv="content-type"
-          content="application/xhtml+xml; charset=UTF-8" />
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <title>{{ page.title }}</title>
 
-    <link rel="stylesheet" type="text/css" href="/css/blueprint/screen.css"
-          media="screen, projection" />
-    <link rel="stylesheet" type="text/css" href="/css/blueprint/print.css"
-          media="print" />
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" type="text/css" href="css/blueprint/ie.css"
-          media="screen, projection" />
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
-    <script type="text/javascript"
-      src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
-    </script>
+    <link href="/css/app.css" media="screen, projector, print" rel="stylesheet" type="text/css" />
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+    <link href="/css/solarized.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="/javascripts/jquery.nospam.js">
     </script>
   </head>
-  <body>
-    <div class="header">
-      <span class="heading">
-        <a href="/">
-          <img src="/images/logo.png" alt="" />
-        </a>
-        {{ page.heading }}
-      </span>
-    </div>
-
-    <div class="container">
-      <div class="span-14">
-        {{ content }}
-      </div>
-      <div class="span-4 last sidebar">
+  <body class="{{ page.type }}">
+    <div id="root">
+      {% if page.type ~= /blog/ %}
+        {% include blog_navigation.html %}
+      {% else %}
         {% include navigation.html %}
+      {% endif %}
+
+      {% if page.heading %}
+        <div class="title-header">
+          <div class="row display">
+            <div class="twelve columns">
+              <span class="heading">
+                {{ page.heading }}
+              </span>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="row display">
+          {% if page.type == 'blog' %}
+            <div class="nine columns">
+              <div class='blog-content'>
+          {% elsif page.type == 'blog post' %}
+            <div class="nine columns">
+              <div class='blog-content blog-post-wrapper'>
+          {% endif %}
+            {{ content }}
+          {% if page.type ~= /blog/ %}
+            <p class='blog-madriska-summary'><strong>Madriska Media
+            Group</strong> is a small software-development shop that works primarily in
+            Ruby, Rails, and sometimes Clojure. Our focus is in software that supports
+            business processes, and we handle all manner of software in many vertical
+            markets. <a href="http://www.madriska.com">Learn more about us.</a>
+            </p>
+            </div>
+          <!--{% elsif page.type == 'blog' %}-->
+          <!--  </div>-->
+          <!--{% endif %}-->
+        </div>
+
+        {% if page.sidebar == 'contact' %}
+          <div class="three columns">
+            <h3>Contact</h3>
+            <p class="address"><strong>Madriska Media Group, Inc.</strong><br />
+            PO Box 47889<br />
+            Chicago IL 60647</p>
+            <p class="phone">(877) 678-3589 <em>toll-free</em><br />
+            (815) 301-3105 <em>fax</em></p>
+          </div>
+        {% endif %}
       </div>
+      <div id="root_footer"></div>
     </div>
 
-    <p class="footer">
-      <strong>Madriska Media Group, Inc.</strong> /
-      PO Box 47889 /
-      Chicago IL 60647<br />
-      <a href="#" rel="moc/aksirdam//ofni" class="email">Info</a> /
-      (877) 678-3589
-    </p>
+    {% if page.type ~= /blog/ %}
+      <div id='footer' class='blog-footer'>
+        <div class="row display">
+          <div class="twelve columns blog-footer-links">
+            <a class='blog-footer-link home-link' href='http://www.madriska.com'>
+              madriska.com
+            </a>
 
-    <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-    try {
-    var pageTracker = _gat._getTracker("UA-15112685-1");
-    pageTracker._trackPageview();
-    } catch(err) {}</script>
+            <a class='blog-footer-link github-link' href="http://github.com/madriska" target="_blank">
+              github.com/madriska
+            </a>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <div id='footer' class='home-footer'>hello</div>
+    {% endif %}
   </body>
 
+  {% include tracking.html %}
   <script type="text/javascript">
     $('a.email').nospam({ replaceText: true });
   </script>
 </html>
-
 

@@ -1,0 +1,202 @@
+/* *******************
+/*    Blog Layout
+/* *******************
+
+@media only screen and (max-width: 700px)
+  .navigation-header-logo-section
+    height: 60px
+
+  .navigation-header-link-section
+    text-align: center !important
+
+  .blog-content
+    padding-left: 0 !important
+
+  .blog-navigation-link
+    display: none !important
+
+  .blog-footer-links
+    margin-left: 0px !important
+    text-align: center !important
+
+.navigation-header-blog-link
+  &:hover
+    opacity: 0.8
+
+.learn-more-badge
+  padding: 8px 15px !important
+  // background: #ccc
+  // border-radius: 0px 0px 5px 5px
+  position: absolute
+  top: -15px
+  right: 10px
+  p
+    font-size: 12px
+  a
+    color: #2a2a2a
+    &:hover
+      color: lighten(#2a2a2a, 30%)
+
+.blog-navigation-link
+  padding-top: 20px
+
+.blog-footer-links
+  text-align: left
+  border-top: 1px solid darken(#F9F9F4, 10%)
+  margin-left: 20px
+  padding-top: 10px
+  padding: 15px 5px 0px 5px
+  display: block
+  list-style-type: none
+
+.blog-footer-link
+  display: inline-block
+  opacity: 0.4
+  line-height: 17px
+  font-size: 12px
+  padding-right: 10px
+  color: #2a2a2a
+
+  &:hover
+    color: #2a2a2a
+
+  &.home-link
+    background: url(/images/logo_mini_black.png) left top no-repeat
+    padding-left: 19px
+
+    &:hover
+      background: url(/images/logo_mini_colored.png) left top no-repeat
+
+  &:hover
+    opacity: 0.6
+
+  &.github-link
+    background: url(/images/github.png) left top no-repeat
+    padding-left: 19px
+
+/* *******************
+/*    Blog Index
+/* *******************
+
+.blog-post-teaser
+  margin-top: 8px
+  margin-bottom: 10px
+  a
+    border-bottom: 1px dotted
+
+.blog-madriska-summary
+  margin-top: 10px
+  margin-bottom: 10px
+  background: lighten(#F9F9F4, 1%)
+  border: 1px solid darken(#F9F9F4, 10%)
+  padding: 10px 10px 8px 10px
+  border-radius: 5px
+  color: lighten(#2a2a2a, 20%)
+
+  a
+    border-bottom: 1px dotted
+
+.blog-posts
+  display: block
+  padding: 15px 0px 0px 0px
+
+.blog-post:last-child
+  padding-bottom: 20px !important
+
+.blog-post
+  list-style-type: none
+  font-family: Georgia, serif
+  padding-bottom: 45px
+
+.blog-post-title
+  font-size: 24px
+  font-family: Junction, Arial
+  letter-spacing: -1px
+  line-height: 26px
+  font-weight: bold
+
+  a
+    color: darken(#E8C79F, 15%) !important
+    &:hover
+      // text-shadow: none
+      color: lighten(#F0DAC0, 5%) !important
+
+.navigation-header-blog-logo
+  &:hover
+    opacity: 0.6 !important
+
+
+.navigation-header-blog
+  position: relative
+
+  .navigation-header-blog-logo
+    height: 60px
+
+  .navigation-header-blog-logo-text
+    background: url('/images/logo_small.png') 2px 0px no-repeat
+    padding-left: 40px
+    display: inline-block
+    font-size: 22px
+    letter-spacing: -1px
+    font-family: Junction, Arial
+    vertical-align: middle
+    height: 32px
+    line-height: 42px
+    margin: 0
+    font-weight: normal
+
+
+  .navigation-header-blog-logo-subtext
+    font-family: 'Shadows Into Light', cursive
+    font-size: 14px
+    margin: 0
+    padding-left: 10px
+    padding-top: 2px
+    text-align: left
+
+  .navigation-header-link-section
+    padding-top: 10px
+
+
+/* *******************
+/*    Blog Post
+/* *******************
+
+.blog-content>h1:first-of-type
+  margin-bottom: -10px
+  color: darken(#E8C79F, 15%) !important
+
+.blog-content>h2:first-of-type
+  border-top: 2px solid #E8C79F
+  padding-top: 25px
+  margin-top: -9px
+
+.blog-post-meta
+  margin-top: 0px
+  font-size: 12px
+  font-family: Junction, Arial
+
+.blog-content
+  font-family: Georgia, serif
+  padding-left: 5px
+
+.blog-post-wrapper
+  ul
+    margin-left: 20px
+  a
+    border-bottom: 1px dotted
+
+  h1, h2, h3, h4, h5, h6
+    font-family: Junction, Arial
+
+  h1
+    margin-top: 0
+    font-size: 35px
+    padding-top: 20px
+
+  h2
+    color: lighten(#2a2a2a, 10%)
+    padding-top: 20px
+    font-size: 24px
+    text-align: left
+    margin-bottom: 5px

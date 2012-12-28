@@ -1,19 +1,28 @@
-<ul class="navigation">
-  {% if page.id == 'home' %}
-  <li class="selected">Home</li>
-  {% else %}
-  <li><a href="/">Home</a></li>
-  {% endif %}
+<div class="navigation-header">
+  <div class="row display navigation-header-logo-section">
+    <div class="six columns">
+      <div class="navigation-header-logo">
+        <h1 class="navigation-header-logo-text">
+          Madriska Media Group, Inc.
+        </h1>
+      </div>
+    </div>
 
-  {% if page.id == 'philosophy' %}
-  <li class="selected">Philosophy</li>
-  {% else %}
-  <li><a href="/philosophy/">Philosophy</a></li>
-  {% endif %}
-
-  {% if page.id == 'opensource' %}
-  <li class="selected">Open Source</li>
-  {% else %}
-  <li><a href="/opensource/">Open Source</a></li>
-  {% endif %}
-</ul>
+    <div class="six columns navigation-header-link-section">
+      <ul class="navigation-links">
+        <li class="navigation-link">
+          <a href="/">Home</a>
+        </li>
+        <li class="navigation-link">
+          <a href="/philosophy">Philosophy</a>
+        </li>
+        <li class="navigation-link">
+          <a href="/opensource">Open Source</a>
+        </li>
+        <li class="navigation-link">
+          <a href="/blog">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

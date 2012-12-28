@@ -1,0 +1,58 @@
+---
+layout: default
+type: blog post
+title: Learning D3
+author: Brent Vatne
+teaser: D3 (Data Driven Documents) is a powerful library for creating dynamic data visualizations in the browser. I love it. Seriously.
+tags:
+- d3
+- javascript
+- oop
+- compatibility
+---
+
+# Learning D3
+
+## What D3 is and why it's worth learning
+<a href="https://developers.google.com/chart/" target="_blank">Google Chart Tools</a> and <a href="http://www.highcharts.com/" target="_blank">Highcharts</a> are great for quickly throwing together Excel-style graphs with a bit of interactivity, but you hit a wall quickly when you want to be creative. <a href="http://raphaeljs.com/" target="_blank">Raphaël</a> is a fantastic library for cross-browser vector drawing, but it is a drawing tool and you will inevitably end up reinventing the wheel to draw axises, create scales, etc. <a href="http://d3js.org/" target="_blank">D3</a>, which is short for Data Driven Documents, fills the gulf between these two extremes - it gives you the same raw drawing power of Raphael by leveraging the SVG (Scalable Vector Graphics) API included in all modern browsers, and provides many useful tools used for visualizing data. It's also worth noting that while you will typically use SVG with D3, all D3 operations are essentially just DOM manipulations, so there is no reason why you could not use non-SVG HTML elements, and in fact this may be a good idea to ensure compatibility with older browsers. If you're not convinced yet, just <a href="http://square.github.com/cubism/" target="_blank">check</a> <a href="http://bl.ocks.org/1062544">out</a> <a href="http://bl.ocks.org/1256572" target="_blank">some</a> <a href="http://www.nytimes.com/interactive/2012/05/17/business/dealbook/how-the-facebook-offering-compares.html" target="_blank">of</a> <a href="http://bl.ocks.org/1123639" target="_blank">the</a> <a href="http://bl.ocks.org/4060954" target="_blank">examples</a> and weep at the beauty of what is capable in modern browsers with this funny little language called JavaScript.
+
+I'll spare you another Introduction to D3 style tutorial, I recommend instead that you read through the concise, 90 page <a href="http://www.amazon.com/Getting-Started-with-D3-ebook/dp/B008FPJST6/ref=dp_kinw_strp_1%3Ftag=68656c7064757-20">Getting Started with D3</a> by Mike Dewar, and then browse the excellent D3 Wiki and Examples to learn more.
+
+Warning: D3 makes heavy use of first-class functions. This may be confusing to new JavaScript developers, those who have only used function passing to implement click handlers, and those who are confused by the sentence "a function that returns a function." Don't be discouraged - this is crucial stuff to learn if you plan on doing anything significant in JavaScript. While you can certainly hack things together without having a good understanding of this, I recommend studying JavaScript Patterns in parallel.
+
+With the rest of this post, I want to share a few insights I earned during my first few sittings with D3.
+
+## Tooltips
+Tried d3-bootstrap, couldn't get it to work, then tried a fork of tipsy discussed on the D3 google group. Worked great.
+
+## Object Oriented D3
+Complex visualizations often involve a hundred or more lines of JavaScript, and many times this will never been touched again. But if I am working on a shared codebase that is constantly evolving, things always need to chnge. Maybe by organizing so how can I organize this if I want my code to be as clean and readable as my visualization?
+
+D3 is built around a common JavaScript pattern called function chaining.
+
+{% highlight javascript %}
+  // This adds an x axis to an existing graph and centers a label below it
+  svg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis)
+    .append("text")
+    .attr("class", "label")
+    .attr("x", width)
+    .attr("y", -6)
+    .style("text-anchor", "end")
+    .text("Time between Eruptions (min.)");
+{% endhighlight %}
+
+This is a convenient way to apply a series of functions without having to repeat the receiver each time. You will see this _everywhere_ in the source code of a D3 visualization. Usually one massive chain after another, until everything is in place and the graph is rendered. Then there might be another separate function like, `update`, or `mouseover`, to handle dynamic behaviour.
+
+
+My first attempt to.. (talk about moving it all into a class)
+Refer to the presentation using Backbone models and websockets
+
+<a href="http://vimeo.com/45558674" target="_blank">Andrew Cholakian's talk on Backbone with D3</a> <a href="https://github.com/andrewvc/d3-backbone-presentation" target="_blank">(code)</a>
+
+## Compatability
+- Divs
+- Axises are SVG only.. unless...
+- Great! Except.. Use aight

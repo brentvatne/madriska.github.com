@@ -1,23 +1,84 @@
-@import compass/css3/text-shadow
+@import compass/css3
+@import compass/layout/sticky-footer
+@import tags
+@import syntax
+@import blog
+@include sticky-footer(80px)
+
+@media only screen and (max-width: 700px)
+  .navigation-header-logo
+    text-align: center
+
+body
+  p
+    text-align: left
+
+body.blog
+  background: lighten(#F6F5ED, 2%)
+
+body, h1, h2, h3, h4, h5, h6, p
+  color: #2a2a2a
+
+#footer
+  padding: 20px 0px 10px 0px
+  line-height: 20px
+  text-align: center
 
 a
   color: #3F5B76
 
-.header
+.navigation-header
+  padding: 15px 0px 5px 0px
+  vertical-align: middle
+
+  .navigation-header-logo
+    height: 40px
+
+    .navigation-header-logo-text
+      background: url('/images/logo_small.png') 2px 0px no-repeat
+      padding-left: 40px
+      display: inline-block
+      font-size: 22px
+      font-family: Junction, Arial
+      letter-spacing: -1px
+      vertical-align: middle
+      height: 35px
+      line-height: 40px
+      margin: 0
+      font-weight: normal
+
+  .navigation-header-link-section
+    height: 40px
+    line-height: 40px
+    text-align: right
+
+    .navigation-links
+      list-style-type: none
+      display: inline-block
+      margin: 0
+      font-family: Junction, Arial
+      letter-spacing: 0px
+
+    .navigation-link
+      vertical-align: middle
+      padding: 0px 12px 5px 12px
+      display: inline-block
+      font-size: 15px
+
+.title-header
   background-color: #3F5B76
-  padding: 15px 50px
-  margin: 5px 0 25px 0
+  // background-color: #494949 - gray
+  padding: 30px 50px 15px 50px
+  margin: 0px 0 25px 0
   color: #eee
   +single-text-shadow(#333, 0, 0, 5px)
   letter-spacing: 1px
+  text-align: center
 
   .heading
-    display: block
-    width: 710px
-    margin: 0 auto
     font-family: Junction, Arial
     font-size: 3em
-    line-height: 1
+    line-height: 1.2
 
     a
       text-decoration: none
@@ -28,3 +89,48 @@ a
         margin-right: 10px
         width: 70px
         height: 65px
+
+/* Old stuff */
+
+@font-face
+  font-family: Junction
+  src: url('/fonts/Junction.otf')
+
+html
+  overflow-y: scroll
+  font-family: Junction, Arial
+
+h2
+  text-align: center
+  color: #333
+
+
+p
+  font-size: 1.2em
+  text-align: justify
+
+
+.phone em
+  padding-left: 5px
+  color: #777
+
+
+ul.navigation
+  list-style-type: none
+  padding-left: 0
+  border: 1px solid #ccc
+
+
+ul.navigation li
+  list-style-type: none
+  padding-left: 10px
+  line-height: 2
+
+
+ul.navigation li.selected
+  background-color: #ccc
+  font-weight: bold
+
+
+ul.navigation li a
+  display: block
